@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatGridList } from '@angular/material/grid-list';
@@ -14,6 +14,8 @@ import {
   Validators,
 } from '@angular/forms';
 import { JsonPipe } from '@angular/common';
+import { Store } from '@ngrx/store';
+import { loginActions } from '../../store/actions';
 
 @Component({
   selector: 'app-login-user-data',
@@ -38,18 +40,27 @@ export class LoginUserDataComponent {
   public formGroup: FormGroup;
   public email: FormControl;
   public password: FormControl;
+  public store: Store;
 
   constructor() {
     this.formBuilder = new FormBuilder();
     
-    this.email = new FormControl('', [Validators.required]); 
-    this.password = new FormControl('', [Validators.required]); 
+    this.email = new FormControl<string>('', [Validators.required]); 
+    this.password = new FormControl<string>('', [Validators.required]); 
 
     this.formGroup = this.formBuilder.group({
       email: this.email,
       password: this.password,
     });
+
+    this.store = inject(Store);
   }
 
-  public sumbit() {}
+  public sumbit() {
+    const credentials: ICredential = {
+      email: this.email.value,
+      password: this.password.value
+    };
+    this.store.dispatch(loginActions.sendLoginRequest({credentials}));
+  }
 }

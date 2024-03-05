@@ -16,6 +16,7 @@ import {
 import { JsonPipe } from '@angular/common';
 import { Store } from '@ngrx/store';
 import { loginActions } from '../../store/actions';
+import ICredential from '../../../shared/interfaces/ICredential';
 
 @Component({
   selector: 'app-login-user-data',

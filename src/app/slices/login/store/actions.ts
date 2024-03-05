@@ -1,4 +1,5 @@
 import { createActionGroup, props } from "@ngrx/store";
+import ICredential from "../../shared/interfaces/ICredential";
 
 export const loginActions = createActionGroup({
     source: '[Login]',

@@ -3,8 +3,9 @@ import { HomeInterfaceComponent } from "../features/home-interface/home-interfac
 
 export const homeRoutes: Routes = [
     {
-        path: '', 
-        component: HomeInterfaceComponent
+        path: '',
+        component: HomeInterfaceComponent,
+        pathMatch: 'full'
     }
 ];
 

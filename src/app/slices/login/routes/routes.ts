@@ -4,7 +4,7 @@ import { LoginInterfaceComponent } from "../features/login-interface/login-inter
 export const loginRoutes: Routes = [
     {
         path: '', 
-        component: LoginInterfaceComponent
+        component: LoginInterfaceComponent,
     }
 ];
 

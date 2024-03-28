@@ -1,3 +1,15 @@
-<header class="">
-  <app-hamburguer [drawerComponent]="drawerComponent" />
+<header>
+  <div class="header-main-info">
+    <app-hamburguer [drawerComponent]="drawerComponent" />
+    <span>Management App</span>
+  </div>
+  <div class="header-options">
+    <div class="icon-container">
+      <mat-icon class="notifications">notifications</mat-icon>
+    </div>
+
+    <div class="icon-container">
+      <mat-icon class="person">person</mat-icon>
+    </div>
+  </div>
 </header>

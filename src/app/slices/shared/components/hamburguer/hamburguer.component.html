@@ -1,0 +1,7 @@
+<div
+  class="menu-button-container"
+  [ngClass]="{ 'hamburguer-closed': isClosed, 'hamburguer-opened': !isClosed }"
+  (click)="toogleHamburguer()"
+>
+  <div class="menu-button"></div>
+</div>

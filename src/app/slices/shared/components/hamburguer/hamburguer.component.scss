@@ -1,0 +1,68 @@
+:host {
+  .menu-button-container {
+    background-color: rgb(224, 224, 224);
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .menu-button,
+  .menu-button::before,
+  .menu-button::after {
+    display: block;
+    background-color: black;
+    position: absolute;
+    height: 5px;
+    width: 40px;
+    border-radius: 3px;
+  }
+
+  .menu-button::before {
+    content: "";
+    margin-top: -10px;
+  }
+
+  .menu-button::after {
+    content: "";
+    margin-top: 10px;
+  }
+
+  .hamburguer-opened {
+    .menu-button::before {
+      transform: translateY(0) rotate(0deg);
+      transition: 250ms linear;
+    }
+
+    .menu-button::after {
+      transform: translateY(0) rotate(0deg);
+      transition: 250ms linear;
+    }
+
+    .menu-button {
+      background-color: black;
+      transition: 250ms linear;
+    }
+  }
+
+  .hamburguer-closed {
+    .menu-button::before {
+      transform: translateY(10px) rotate(45deg);
+      transition: 250ms linear;
+    }
+
+    .menu-button::after {
+      transform: translateY(-10px) rotate(-45deg);
+      transition: 250ms linear;
+    }
+
+    .menu-button {
+      background-color: transparent;
+      transition: 250ms linear;
+    }
+  }
+}

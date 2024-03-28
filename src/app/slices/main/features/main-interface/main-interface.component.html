@@ -5,6 +5,9 @@
     </nav>
   </mat-drawer>
 
+  <!-- Header Menu -->
+  <app-header-menu [drawerComponent]="drawer"></app-header-menu>
+
   <div class="example-sidenav-content">
     <button type="button" mat-button (click)="drawer.toggle()">
       Toggle sidenav

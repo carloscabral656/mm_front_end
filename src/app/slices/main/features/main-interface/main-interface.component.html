@@ -1,13 +1,7 @@
-<mat-drawer-container class="main-container" autosize>
-  <mat-drawer #drawer class="sidenav" mode="side">
-    <nav>
-      <a routerLink="home">Home</a><br>
-    </nav>
-  </mat-drawer>
-
+<mat-drawer-container class="main-container">
+  <app-sidebar-menu (drawerEmmiter)="handleDrawer($event)"></app-sidebar-menu>
   <app-header-menu [drawerComponent]="drawer"></app-header-menu>
-
-  <div class="example-sidenav-content">
+  <div class="main-content">
     <router-outlet></router-outlet>
   </div>
 </mat-drawer-container>

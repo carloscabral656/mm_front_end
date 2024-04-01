@@ -7,17 +7,19 @@ import { MatDrawer } from '@angular/material/sidenav';
   standalone: true,
   imports: [NgClass],
   templateUrl: './hamburguer.component.html',
-  styleUrl: './hamburguer.component.scss'
+  styleUrl: './hamburguer.component.scss',
 })
 export class HamburguerComponent {
-
   @Input()
   public drawerComponent!: MatDrawer;
+
+  @Input()
+  public initialState!: boolean;
 
   public isClosed: boolean;
 
   constructor() {
-    this.isClosed = false;
+    this.isClosed = this.initialState;
   }
 
   public toogleHamburguer() {
